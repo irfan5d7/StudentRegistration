@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    Term
+{% endblock %}
+{% block body_block %}
+<table class="table table-hover">
+<thead>
+    <tr>
+         <th scope="col">Term Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Season</th>
+        <th scope="col">Year</th>
+    </tr>
+</thead>
+    <tr>
+       <td>{{ object.term_season }} - {{ object.term_year }}</td>
+        <td>{{ object.term_start_date }}</td>
+        <td>{{ object.term_end_date }}</td>
+        <td>{{ object.term_season }}</td>
+        <td>{{ object.term_year }}</td>
+    </tr>
+</table>
+<button type="button" class="btn btn-default btn-lg">
+  <span class="bi bi-arrow-return-left" aria-hidden="true"><a  href="{% url 'sisapp:studyTerm_list' %}" >Back to List</a></span>
+</button>
+{% endblock %}

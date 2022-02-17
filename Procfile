@@ -1,0 +1,1 @@
+web: gunicorn Software_Chasers_SISAPP.wsgi

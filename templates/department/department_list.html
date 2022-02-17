@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    List Departments
+{% endblock %}
+{% block body_block %}
+    <br/>
+    <div>
+        <button  class="bi bi-person-plus"><a href="{% url 'sisapp:department_create'%}">&nbsp Add Department</a></button>
+    </div>
+    <br/>
+{% if object_list %}
+<table class="table table-hover">
+<thead>
+    <tr>
+        <th scope="col">Department Name</th>
+        <th scope="col">Details</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </tr>
+</thead>
+{% for object in object_list %}
+    <tr>
+    <td>{{ object.department_name }}</td>
+    <td><a class="bi bi-card-text" href="{% url 'sisapp:department_details' object.department_id %}"></a></td>
+    <td><a class="bi bi-pencil-square" href="{% url 'sisapp:department_edit' object.department_id %}"></a></td>
+    <td><a class="bi bi-trash-fill" href="{% url 'sisapp:department_delete' object.department_id %}"></a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

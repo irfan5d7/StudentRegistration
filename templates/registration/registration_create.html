@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title_block %}
+    Registration Create
+{% endblock %}
+{% block body_block %}
+   <br/><br/>
+<center >
+<div class="card text-center" style="width: 400px;background-color: aliceblue">
+    <div class="card-header">
+        Add Registration
+    </div>
+    <div class="card-body">
+      <div class="col d-flex justify-content-center">
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+             {{ form | bootstrap }}
+
+            <input class="button-sm" type="submit" value="Add">
+
+        </form>
+        </div>
+    </div>
+  <div class="card-footer text-muted">
+        <a class="bi bi-arrow-return-left" href="{% url 'sisapp:registration_list' %}">Back to List</a>
+  </div>
+</div>
+</center>
+{% endblock %}
+

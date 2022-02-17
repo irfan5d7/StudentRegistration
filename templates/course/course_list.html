@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    List Student
+{% endblock %}
+
+{% block body_block %}
+     <br/>
+    <div>
+<button  class="bi bi-person-plus" style="border: cyan"><a href="{% url 'sisapp:course_create'%}"> &nbsp Add Course</a></button>
+    </div>
+    <br />
+{% if object_list %}
+<table class="table table-hover">
+<thead>
+    <tr>
+        <th scope="col">Course Id</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Details</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </tr>
+</thead>
+<tbody>
+{% for object in object_list %}
+    <tr>
+        <td>{{ object.course_id }}</td>
+        <td>{{ object.course_name }}</td>
+        <td><a class="bi bi-card-text" href="{% url 'sisapp:course_details' object.id %}"></a></td>
+        <td><a class="bi bi-pencil-square" href="{% url 'sisapp:course_edit' object.id %}"></a></td>
+        <td><a class="bi bi-trash-fill" href="{% url 'sisapp:course_delete' object.id %}"></a></td>
+    </tr>
+
+    {% endfor %}
+</tbody>
+</table>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,139 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon"  href="{% static 'img/img.ico' %}"/>
+
+    <!-- Bootstrap CSS -->
+  <style>
+       td,th {
+           background: #CDF5F6;
+       }
+       body {
+          min-height: 80vh;
+   height: auto !important;
+   height: 100%;
+   margin: 0 auto -60px;
+        }
+
+  </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <title> {% block title_block %}
+        {% endblock %}
+    </title>
+  </head>
+  <body style="background-image: url({% static 'img/bg4.webp' %}) ;background-size: cover ">
+{#  <body style="background: #FFD670">#}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'sisapp:index' %}">Student Information System</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        {#Student#}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'sisapp:student_list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Student
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'sisapp:student_create' %}">Add Student</a>
+              <a class="dropdown-item" href="{% url 'sisapp:student_list' %}">List Students</a>
+            </div>
+          </li>
+
+{#          Instructor#}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'sisapp:student_list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Instructor
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'sisapp:instructor_create' %}">Add Instructor</a>
+              <a class="dropdown-item" href="{% url 'sisapp:instructor_list' %}">List Instructors</a>
+            </div>
+          </li>
+
+{#          Departments #}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'sisapp:student_list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Departments
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'sisapp:department_create' %}">Add Department </a>
+              <a class="dropdown-item" href="{% url 'sisapp:department_list' %}">List Department</a>
+            </div>
+
+{#          Courses#}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'sisapp:student_list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Courses
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'sisapp:course_create' %}">Add Courses </a>
+              <a class="dropdown-item" href="{% url 'sisapp:course_list' %}">List Courses</a>
+            </div>
+          </li>
+
+{#          Study Terms #}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'sisapp:student_list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Study Terms
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'sisapp:studyTerm_create' %}">Add Term </a>
+              <a class="dropdown-item" href="{% url 'sisapp:studyTerm_list' %}">List Term</a>
+            </div>
+          </li>
+  {#          Teaching Assignment #}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'sisapp:student_list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Teaching Assignment
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'sisapp:teachingAssignments_create' %}">Assign Teacher </a>
+              <a class="dropdown-item" href="{% url 'sisapp:teachingAssignments_list' %}">List Assignment</a>
+            </div>
+          </li>
+
+{#          Course Resistration #}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'sisapp:student_list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Course Resistration
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'sisapp:registration_create' %}">Register Course</a>
+              <a class="dropdown-item" href="{% url 'sisapp:registration_list' %}">List Registered Courses</a>
+            </div>
+          </li>
+          <li class="nav-item">
+        <a class="dropdown-item" href="{% url 'sisapp:about' %}">About</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+{% block body_block %}
+  {% endblock %}
+
+<footer class="footer fixed-bottom" style="position:relative; width:100%;">
+      <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2021 - Software Chasers SIS Application
+  </div>
+  </footer>
+  </body>
+</html>

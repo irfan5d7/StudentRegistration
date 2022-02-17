@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    Course
+{% endblock %}
+{% block body_block %}
+
+<table class="table table-hover">
+<thead>
+        <tr>
+            <th scope="col">Course Id</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Department Name</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>{{ course.course_id}}</td>
+        <td>{{ course.course_name }}</td>
+        <td>{{ course.course_dept_id }}</td>
+    </tr>
+</table>
+
+    <hr/>
+<button type="button" class="btn btn-default btn-lg">
+  <span class="bi bi-arrow-return-left" aria-hidden="true"><a  href="{% url 'sisapp:course_list' %}" >Back to List</a></span>
+</button>
+{% endblock %}

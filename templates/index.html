@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title_block %}
+    Home Page
+{% endblock %}
+{% block body_block %}
+    <div>
+    <div class="py-5">
+    <div class="container" >
+      <div class="row hidden-md-up">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block" style="height: 100px;border-style: outset">
+              <h4 class="card-title">Students</h4>
+              <h6 class="card-subtitle text-muted">Students Basic Information</h6>
+              <a href="{% url 'sisapp:student_create' %}" class="card-link">Register here</a>
+              <a href="{% url 'sisapp:student_list' %}" class="card-link"> View Registered Students</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block" style="height: 100px;border-style: outset">
+              <h4 class="card-title">Instructor</h4>
+              <h6 class="card-subtitle text-muted">Instructor Basic Information</h6>
+              <a href="{% url 'sisapp:instructor_create' %}" class="card-link">Register here</a>
+              <a href="{% url 'sisapp:instructor_list' %}" class="card-link"> View Instructors</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block" style="height: 100px;border-style: outset">
+              <h4 class="card-title">Courses Register</h4>
+              <h6 class="card-subtitle text-muted">Course Registration information</h6>
+              <a href="{% url 'sisapp:student_create' %}" class="card-link">Enroll for Courses</a>
+              <a href="{% url 'sisapp:student_list' %}" class="card-link"> Enrolled Courses</a>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block" style="height: 100px;border-style: outset">
+              <h4 class="card-title">Department</h4>
+              <h6 class="card-subtitle text-muted">Department Basic Information</h6>
+              <a href="{% url 'sisapp:department_create' %}" class="card-link">Add Department here</a>
+              <a href="{% url 'sisapp:department_list' %}" class="card-link">Departments present</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block" style="height: 100px;border-style: outset">
+              <h4 class="card-title">Courses</h4>
+              <h6 class="card-subtitle text-muted">Course Information</h6>
+              <a href="{% url 'sisapp:course_create' %}" class="card-link">Add Courses here</a>
+              <a href="{% url 'sisapp:course_list' %}" class="card-link"> View Available Courses</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block" style="height: 100px;border-style: outset">
+              <h4 class="card-title">Study Term</h4>
+              <h6 class="card-subtitle text-muted">Terms Information</h6>
+              <a href="{% url 'sisapp:student_create' %}" class="card-link">Add Term</a>
+              <a href="{% url 'sisapp:studyTerm_list' %}" class="card-link">View Available Terms</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <br/>
+        <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block" style="height: 100px;border-style: outset">
+              <h4 class="card-title">Teaching Assignment</h4>
+              <h6 class="card-subtitle text-muted">Teaching Assignment Information</h6>
+              <a href="{% url 'sisapp:teachingAssignments_create' %}" class="card-link">Add Teaching Assignment here</a>
+              <a href="{% url 'sisapp:teachingAssignments_list' %}" class="card-link">Teaching Assignments</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block" style="height: 100px;border-style: outset">
+              <h4 class="card-title">About</h4>
+              <h6 class="card-subtitle text-muted">Team Information</h6>
+              <a href="{% url 'sisapp:about' %}" class="card-link">View Team Members here</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+    </div>
+{% endblock %}

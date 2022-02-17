@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    Study Term
+{% endblock %}
+{% block body_block %}
+<br/>
+    <div>
+        <button  class="bi bi-person-plus"><a href="{% url 'sisapp:studyTerm_create'%}">&nbsp Add Term</a></button>
+    </div>
+    <br/>
+{% if object_list %}
+<table class="table table-hover">
+<thead>
+<tr>
+    <th scope="col">Term Name</th>
+    <th scope="col">Start Date</th>
+    <th scope="col">End Date</th>
+    <th scope="col">Season</th>
+    <th scope="col">Year</th>
+    <th scope="col">Details</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+</tr>
+</thead>
+<tbody>
+{% for object in object_list %}
+    <tr>
+        <td>{{ object.term_season }} - {{ object.term_year }}</td>
+        <td>{{ object.term_start_date }}</td>
+        <td>{{ object.term_end_date }}</td>
+        <td>{{ object.term_season }}</td>
+        <td>{{ object.term_year }}</td>
+
+        <td><a class="bi bi-card-text" href="{% url 'sisapp:studyTerm_details' object.term_id %}"></a></td>
+        <td><a class="bi bi-pencil-square" href="{% url 'sisapp:studyTerm_edit' object.term_id %}"></a></td>
+        <td><a class="bi bi-trash-fill" href="{% url 'sisapp:studyTerm_delete' object.term_id %}"></a></td>
+    </tr>
+
+    {% endfor %}
+</tbody>
+</table>
+{% endif %}
+{% endblock %}

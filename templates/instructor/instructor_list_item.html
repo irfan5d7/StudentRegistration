@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    Student
+{% endblock %}
+{% block body_block %}
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+         <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Department</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ object.instructor_first_name }}</td>
+        <td>{{ object.instructor_last_name }}</td>
+        <td>{{ object.instructor_email }}</td>
+        <td>{{ object.instructor_dept_id }}</td>
+    </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-default btn-lg">
+  <span class="bi bi-arrow-return-left" aria-hidden="true"><a  href="{% url 'sisapp:instructor_list' %}" >Back to List</a></span>
+</button>
+{% endblock %}

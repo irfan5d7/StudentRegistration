@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title_block %}
+About
+{% endblock %}
+{% block body_block %}
+
+<table class="table table-hover">
+<center>
+    <thead>
+        <tr>
+            <th colspan="1" scope="col">Team SoftwareChasers</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for name in data %}
+        <tr><td>{{ name }}</td></tr>
+    {% endfor %}
+    </tbody>
+    </center>
+
+</table>
+{% endblock %}
